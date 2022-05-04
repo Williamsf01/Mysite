@@ -1,0 +1,462 @@
+.error-warning-section {
+	background-color: #b50000;
+	padding: 5px;
+	color: white;
+	text-align: center;
+}
+
+.error-warning-section button {
+	background-color: white;
+	color: #b50000;
+	display: block;
+	width: 100%;
+	font-weight: bold;
+}
+
+.error-warning-section button:hover, .error-warning-section button:focus {
+	background: none;
+	border: white thin solid;
+	color: white;
+}
+
+.error-warning-section .buttonStyle {
+	background-color: white;
+	color: #b50000;
+	font-weight: bold;
+}
+
+.error-warning-section .buttonStyle:hover {
+	background: none;
+	border: white thin solid;
+	color: white;
+}
+
+.hp-error-alert {
+	background-color: #b50000;
+	color: white;
+	box-shadow: none;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.hp-error-success {
+	background-color: green;
+	color: white;
+	box-shadow: none;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.header-section {
+	width: 100%;
+	display: block;
+	padding-bottom: 25px;
+}
+
+.home-header-bg {
+	background-image: url("../img/hp-hero-img-bkg-img-1.jpg");
+	background-size: cover;
+	min-height: 400px;
+}
+
+.header-topbar-container {
+	background-color: rgba(51, 122, 183, 0.75);
+	margin-bottom: 15px;
+	padding: 15px 0;
+	box-shadow: 2px 2px 10px #000000;
+}
+
+h1.header-topbar-title {
+	color: #fff;
+	margin: 0;
+	text-shadow: 2px 2px 8px #000000;
+}
+
+.header-cta-container-left {
+	margin-top: 50px;
+	margin-bottom: 30px;
+	padding: 0 20px;
+}
+
+.header-cta-title {
+	font-family: helvetica, arial, sans-serif;
+	font-size: 30px;
+	padding-bottom: 10px;
+	text-shadow: 2px 2px 4px #000000;
+	color: #fff;
+}
+
+.header-cta-caption {
+	font-size: 20px;
+	font-family: helvetica, arial, sans-serif;
+	color: #fff;
+	text-shadow: 2px 2px 4px #000000;
+}
+
+.home-primary-btn {
+	background-color: #337AB7;
+	box-shadow: 2px 2px 8px #000000;
+	color: #fff;
+	font-size: 20px;
+	margin-top: 15px;
+	padding: 5px 20px;
+	display: block;
+	width: 100%
+}
+
+.header-cta-primary-btn {
+	background-color: #337AB7;
+	box-shadow: 2px 2px 8px #000000;
+	color: #fff;
+	font-size: 20px;
+	margin-top: 15px;
+	padding: 5px 20px;
+	display: block;
+	width: 100%
+}
+
+.home-primary-btn:hover, .home-primary-btn:focus, .home-login-btn:hover, .home-login-btn:focus, .home-register-btn:hover, .home-register-btn:focus, .header-cta-primary-btn:hover, .header-cta-primary-btn:focus {
+	color: #fff;
+	background: #275d8b;
+	/* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(#275d8b, #337AB7);
+	/* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#275d8b, #337AB7);
+	/* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#275d8b, #337AB7);
+	/* For Firefox 3.6 to 15 */
+	background: linear-gradient(#275d8b, #337AB7);
+	/* Standard syntax */
+}
+
+.home-login-btn {
+	background-color: #337AB7;
+	color: #fff;
+	font-size: 24px;
+}
+
+.home-register-btn {
+	background-color: #fff;
+	border: 1px solid #337AB7;
+	color: #337AB7;
+	font-size: 24px;
+}
+
+.home-login-container {
+	margin: 20px 0;
+	padding: 5px 15px;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 2px 2px 10px #000000;
+}
+
+.login-header {
+	font-size: 22px;
+	color: #3333;
+}
+
+/* decorated-header is for the lines on headers on home page. */
+
+.decorated-logon {
+	overflow: hidden;
+	text-align: left;
+}
+
+.decorated-logon>span {
+	position: relative;
+	display: inline-block;
+}
+
+.decorated-logon>span:before, .decorated-logon>span:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	border-bottom: 3px solid;
+	width: 1000px;
+	/* half of limiter*/
+	margin: 0 20px;
+}
+
+.decorated-logon>span:before {
+	right: 100%;
+}
+
+.decorated-logon>span:after {
+	left: 100%;
+}
+
+.cta-section {
+	border-top: solid 1px #666;
+	border-bottom: solid 1px #666;
+	width: 100%;
+	display: block;
+	background-color: #222;
+	color: #fff;
+	padding: 25px 0;
+}
+
+.cta-link-block {
+	display: block;
+	width: 100%;
+	margin: 30px 0;
+	box-shadow: 0 0 8px #000000;
+	text-shadow: 0 0 8px #000000;
+}
+
+.cta-link-block:hover, .cta-link-block:focus {
+	box-shadow: 10px 10px 50px #000000;
+	cursor: pointer;
+}
+
+.cta-container-1 {
+	position: relative;
+	background-size: cover;
+	background-position: center center;
+	background-image: url("/static/images/dwd-hp-cta-thumbnail-img-1.jpg");
+	min-height: 200px;
+}
+
+.cta-container-2 {
+	position: relative;
+	background-size: cover;
+	background-position: center center;
+	background-image: url("/static/images/dwd-hp-cta-thumbnail-img-2.jpg");
+	min-height: 200px;
+}
+
+.cta-container-3 {
+	position: relative;
+	background-size: cover;
+	background-position: center center;
+	background-image: url("/static/images/dwd-hp-cta-thumbnail-img-3.jpg");
+	min-height: 200px;
+}
+
+.cta-container-4 {
+	position: relative;
+	background-size: cover;
+	background-position: center center;
+	background-image: url("/static/images/dwd-hp-cta-thumbnail-img-4.jpg");
+	min-height: 200px;
+}
+
+/* .cta-link-block:hover, .cta-link-block:focus{
+	transform: scale(1.1);
+	transition: all .2s;
+
+} */
+
+.cta-caption-container {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.75);
+	padding: 10px;
+}
+
+.cta-title-txt {
+	color: #fff;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.cta-caption {
+	font-size: 16px;
+	margin-bottom: 0;
+	color: #72CDF4;
+}
+
+/* Begin Homepage DWD News/tutorials CSS */
+
+.news-tutorials-section {
+	width: 100%;
+	display: block;
+	background-color: #333;
+	color: #fff;
+	padding: 25px 0;
+}
+
+.news-tutorials-title-txt {
+	color: #fff;
+	font-size: 16px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+.news-tutorials-box-container {
+	margin: 20px 0;
+}
+
+/* Begin Homepage DWD News/tutorials CSS */
+
+.home-resources-section {
+	width: 100%;
+	display: block;
+	background-color: #337ab7;
+	color: #fff;
+	padding: 25px 0;
+}
+
+.home-resources-icon-container {
+	border: solid #fff 2px;
+	border-radius: 10px;
+	padding: 10px;
+	display: block;
+	width: 100%;
+	height: auto;
+	text-align: center;
+}
+
+.home-resources-icon-container:hover, .home-resources-icon-container:focus {
+	background-color: #286192;
+	font-weight: bold;
+}
+
+.home-resources-icon-container h3 {
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.resources-link-block {
+	display: block;
+	width: 100%;
+}
+
+.resources-link-block:hover {
+	text-decoration: none;
+}
+
+/* Contact Us Footer CSS */
+
+.contact-footer-section {
+	width: 100%;
+	display: block;
+	background-color: #333;
+	color: #fff;
+	padding: 25px 0;
+	border-top: #ccc thin solid;
+}
+
+.contact-footer-txt {
+	color: #fff;
+	font-size: 18px;
+	text-align: center;
+	font
+}
+
+.contact-footer-txt small {
+	font-size: 15px;
+	color: #999;
+}
+
+/* decorated-section-title is for the lines on headers on home page. */
+
+h2.decorated-section-title {
+	color: #ffffff;
+	font-size: 30px;
+}
+
+.decorated-section-title {
+	overflow: hidden;
+	text-align: center;
+}
+
+.decorated-section-title>span {
+	position: relative;
+	display: inline-block;
+}
+
+.decorated-section-title>span:before, .decorated-section-title>span:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	border-bottom: 3px solid #fff;
+	;
+	width: 1000px;
+	/* half of limiter*/
+	margin: 0 20px;
+}
+
+.decorated-section-title>span:before {
+	right: 100%;
+}
+
+.decorated-section-title>span:after {
+	left: 100%;
+}
+
+.img-full-width {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.margin-col-zero {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.padding-col-resource-icons {
+	margin: 0;
+	padding: 5px;
+}
+
+/* Small devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+	.contact-footer-txt {
+		color: #fff;
+		font-size: 30px;
+		text-align: center;
+	}
+	.contact-footer-txt small {
+		font-size: 20px;
+		color: #999;
+	}
+	.error-warning-section button {
+		background-color: white;
+		color: #b50000;
+		display: inline-block;
+		width: auto;
+		margin-left: 15px;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+	.header-cta-primary-btn {
+		display: inline-block;
+		width: auto;
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {}
+
+/* Medium devices (desktops, 992px and up) */
+
+@media (max-width: 1119px) {}
+
+/* Begin Homepage Call to action CSS Only if we are going to create tab/pills for mobile, otherwise can ignore this and delete
+#mobile-cta-toggle-section{
+	padding:10px;
+	display:block;
+	margin:0 auto;
+	text-align:center;
+	width:100%;
+	background:#222;
+}
+
+#mobile-cta-toggle-section a{
+	background:none;
+	color:white;
+}
+
+#mobile-cta-toggle-section a:hover, #mobile-cta-toggle-section a.active, #mobile-cta-toggle-section a:focus{
+	background:#337AB7;
+	color:white;
+}
+*/

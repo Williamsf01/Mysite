@@ -1,0 +1,1010 @@
+// css_domain.js
+/***
+
+ Finds the element given and switches to the css class given as the opposite.
+
+
+*/
+
+function showOrHide(nodeName, shownClass, hiddenClass)
+{
+	var childDiv = document.getElementById(nodeName);
+	if (childDiv)
+	{
+		if (childDiv.className == shownClass)
+		{
+			childDiv.className = hiddenClass;
+		}
+		else
+		{
+			childDiv.className = shownClass;
+		}
+	}
+}
+
+
+function showStatus(msg)
+{
+ 	window.status = msg; 
+ 	return true;
+}
+
+
+
+function onCalendarDaySelect(year, month, day, formName,fieldId, parsedValue,countValue)
+{ 
+  
+	//var element = eval("document."+formName+"."+fieldId);
+	var element = eval("document."+formName+"['"+fieldId+"']");
+
+   if(isArray(element))
+      element[countValue].value=parsedValue;
+  else element.value=parsedValue;
+  
+}
+
+
+function isArray(obj)
+{
+	return(typeof(obj.length)=="undefined")?false:true;
+}
+
+function openCalendarWindow(formName, fieldId, dateFormat, countValue)
+ {var toOpen = "jsp/tool/calendar/calendar.jsp?formName="+formName+"&fieldName="+fieldId+"&dateFormat="+dateFormat
+    + "&countValue="+countValue;
+ 
+  var form = eval("document."+formName);
+  if(form) //form exists
+	  
+   {
+	//var element = eval("document."+formName+"."+fieldId);
+   	var element = eval("document."+formName+"['"+fieldId+"']");
+
+    var value = (!isArray(element)) ? element.value:
+                               element[countValue].value;
+   
+    if(value.length>0)
+    {
+    try{
+   
+      var date = new Date(value);
+      var year=date.getFullYear();
+   
+      if(year<=100)
+       year+=2000;
+       
+      if (!isNaN(year)) {
+           toOpen+="&year="+year+"&month="+date.getMonth()+"&day="+1;	
+      } 
+     }catch(e)
+      { //bad date ignore
+      
+      }
+    
+    }
+   
+   }else
+    {alert("An error has occured configuring the date option.  Please report this problem"+
+     " with this page and field");
+     return;
+    
+    }
+ 
+	var w = window.open(toOpen, "Calendar", "left=400,resizable=no,height=245,width=240,scrollbars=no,titlebar=no");
+    w.focus();
+ 
+ }
+ function navigateToUrl(urlName){
+		window.location.href=urlName;
+	}
+	
+
+/*function goto(loc){
+ document.location.href=loc;
+}	*/
+function ismaxlength(obj)
+
+      {alert(obj);
+
+            var mlength=obj.getAttribute? parseInt(obj.getAttribute("maxlength")) : ""
+
+            if (obj.getAttribute && obj.value.length>mlength)
+
+                  obj.value=obj.value.substring(0,mlength)
+
+      }
+	
+	function getSelectedRadio(radio){
+var radioObj = document.getElementsByName(radio);
+   if(!radioObj)
+		return "";
+	var radioLength = radioObj.length;
+	if(radioLength == undefined)
+		if(radioObj.checked)
+			return radioObj.value; 
+		else
+			return "";
+	for(var i = 0; i < radioLength; i++) {
+		if(radioObj[i].checked) {
+			return radioObj[i].value;
+		}
+	}
+	return "";
+
+       }
+  function gotoUrl(loc,radio){
+var selVal = getSelectedRadio(radio);
+ document.location.href=loc+selVal;
+
+ return;
+ }
+  function gotoUrlSel(loc,sel){
+var selVal = getSelFrmDropDown(sel);
+ document.location.href=loc+selVal;
+ return;
+ 
+}       
+
+function getSelFrmDropDown(select){
+var dropdownIndex = document.getElementById(select).selectedIndex;
+var dropdownValue = document.getElementById(select)[dropdownIndex].value;
+return dropdownValue;       }
+
+function setActionAndSubmit(paramName,actionParamVal,formName,actionHtm){
+    document.getElementsByName(paramName)[0].value = actionParamVal;
+    if(actionHtm!=null){
+    document.forms[formName].action=actionHtm;
+    }
+    document.forms[formName].submit();
+    return true;
+       }
+       
+function setActionUrlAndSubmit(formName,actionUrl,radio){
+	var selVal = getSelectedRadio(radio);
+	document.forms[formName].action=actionUrl+selVal;
+	document.forms[formName].submit();
+	return true;
+   }     
+
+function rel_item(url){
+var SSN=document.forms[0].ssn.value;
+var wobNumber=document.forms[0].wobNumber.value;
+URL=url+"?ssn="+SSN+"&wobNumber="+wobNumber;
+
+windowprops = "top=150,left=150,resizable=no,scrollbars=no,width=700,height=400,statusbar=no, menubar=no, titlebar=no";
+window.open(URL, "rel_item", windowprops);
+
+}
+function viewDetermination()
+{
+  var url="IWFViewOldDetermination.htm";
+  windowprops = "top=150,left=150,resizable=no,scrollbars=no,width=800,height=500,statusbar=no, menubar=no, titlebar=no";
+  child=window.open(url, "openStatementWarning", windowprops);
+}
+
+function openCalendarWindowSat(formName, fieldId, dateFormat, countValue)
+ {var toOpen = "jsp/tool/calendar/iwfCalendar.jsp?formName="+formName+"&fieldName="+fieldId+"&dateFormat="+dateFormat
+    + "&countValue="+countValue;
+ 
+  var form = eval("document."+formName);
+  if(form) //form exists
+   {var element = eval("document."+formName+"."+fieldId);
+   var value = (!isArray(element)) ? element.value:
+                               element[countValue].value;
+    if(value.length>0)
+    {
+    try{
+      var date = new Date(value);
+      var year=date.getYear();
+      if(year<=100)
+       year+=2000;
+       
+      if (!isNaN(year)) {
+       		toOpen+="&year="+year+"&month="+date.getMonth()+"&day="+1;	
+      } 
+     }catch(e)
+      { //bad date ignore
+      
+      }
+    
+    }
+   
+   }else
+    {alert("An error has occured configuring the date option.  Please report this problem"+
+     " with this page and field");
+     return;
+    
+    }
+ 
+	var w = window.open(toOpen, "Calendar", "left=400,resizable=no,height=245,width=240,scrollbars=no,titlebar=no");
+    w.focus();
+ 
+ }      
+ function enableVoucherDateFields(f)
+ {
+  var stopInd=document.forms[0].stopPayInd.value;
+  if(document.forms[0].stopPayInd.checked)
+   {
+    document.getElementById("voucherReserveDateFrom").readOnly=false;
+    document.forms[0].voucherReserveDateTo.readOnly=false;
+   }
+  else
+  {
+   document.getElementById("voucherReserveDateFrom").readOnly=true;
+   document.forms[0].voucherReserveDateTo.readOnly=true;
+   document.getElementById("voucherReserveDateFrom").value="";
+   document.forms[0].voucherReserveDateTo.value="";
+   
+  } 
+ }
+ 
+ function enableCreateAndResolveFields(f)
+ {
+ 
+  var stopInd=document.forms[0].stopPayInd.value;
+  if(document.forms[0].stopPayInd.checked)
+   {
+    document.getElementById("voucherFromDate").readOnly=false;
+    document.forms[0].voucherToDate.readOnly=false;
+   }
+  else
+  {
+  
+   document.getElementById("voucherToDate").readOnly=true;
+   document.forms[0].voucherFromDate.readOnly=true;
+   document.getElementById("voucherToDate").value="";
+      document.forms[0].voucherFromDate.value="";
+  } 
+ }
+ 
+ function winOpenForPrint(url){
+		windowprops = "top=150, left=150, height=540, width=780, status=no, menubar=no, resizable=no, toolbar=no, scrollbars=yes,location=no";
+		var win = window.open(url, "_blank", windowprops);
+		return;
+	}
+ 
+ $(document).ready(function() {
+		$('.calendar-text').datepicker('remove');
+		
+		toggleLastNameFields();
+		$("input[name='otherLastNames']").change(function () {
+			toggleLastNameFields();
+		});
+ });
+ 
+ function pulse() {
+	    $(".pulsing").animate({
+	        letterSpacing: "+=1px"}, 1000, function(){
+	        $(".pulsing").animate({
+	        	letterSpacing: "-=1px"
+	        },1000, pulse());
+	    });
+ };
+ 
+ function toggleLastNameFields() { 
+	    if ($('input[name="otherLastNames"]:checked').val() === 'Y')
+	        $("#additionalLastNames").show();
+	    else
+	        $("#additionalLastNames").hide();
+ }; 
+ 
+ function revealMasked(masked) {
+	masked.setAttribute("type", "text");
+ };
+ 
+ function coverMasked(masked) {
+	masked.setAttribute("type", "password");
+ };
+ 
+ function showSsn() {
+	revealMasked(document.getElementById('ssn1'));
+	revealMasked(document.getElementById('ssn2'));
+	revealMasked(document.getElementById('ssn3'));
+ }
+ function hideSsn() {
+	coverMasked(document.getElementById('ssn1'));
+	coverMasked(document.getElementById('ssn2'));
+	coverMasked(document.getElementById('ssn3'));
+ }
+ $(document).ready(function () {
+			$('#issueLink').click(function () {
+				$('#issuesSel').modal('show');
+			});
+});
+ 		
+var updateChevron = function(callingElement,element) {
+	var eleId = document.getElementById(element);
+    if (!callingElement.classList.contains('collapsed')) {
+        eleId.classList.remove('glyphicon-chevron-up');
+        eleId.classList.add('glyphicon-chevron-down');
+    }
+    else {
+        eleId.classList.remove('glyphicon-chevron-down');
+        eleId.classList.add('glyphicon-chevron-up');
+    }
+};
+		
+$('.bye').popover({
+	content: "Benefit Year End",
+	container: "body",
+	trigger: 'hover click',
+	placement: 'top',
+	delay: {
+		show: 500,
+		hide: 100
+	}
+});
+$('.paidToDate').popover({
+	content: "This is how much we've paid to you on this claim. You may not have gotten this full amount due to withholding of taxes, child support, and other items. This amount does not include the $600 Federal Pandemic Unemployment Compensation payments.",
+	container: "body",
+	trigger: 'hover click',
+	placement: 'top',
+	delay: {
+		show: 500,
+		hide: 100
+	}
+});
+$('.mba').popover({
+	content: "Maximum Benefit Amount",
+	container: "body",
+	trigger: 'hover',
+	placement: 'top',
+	delay: {
+		show: 500,
+		hide: 100
+	}
+});
+$('.wba').popover({
+	content: "Weekly Benefit Amount",
+	container: "body",
+	trigger: 'hover click',
+	placement: 'top',
+	delay: {
+		show: 500,
+		hide: 100
+	}
+});
+$('.rba').popover({
+	content: "Remaining Benefit Amount",
+	container: "body",
+	trigger: 'hover click',
+	placement: 'top',
+	delay: {
+		show: 500,
+		hide: 100
+	}
+});
+
+	$('.tooltip-text' ).click(function( event ) {
+	  event.preventDefault();
+	 // alert( "Handler for .mouseup() called." );
+	  $(this).focus();
+	});
+
+
+
+
+
+//L.Clay ~ For all global tooltip/popover hints. 
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover({
+    	container: "body",
+    	
+    	html : true,
+      
+        trigger: 'hover focus',
+
+    	placement: 'auto top',
+
+        delay: {
+
+		show: 300,
+
+		hide: 100
+
+		},
+
+	viewport: { 
+
+		selector: 'body', 
+
+		padding: 3
+
+		}
+
+	    });
+		
+	
+
+	//L.Clay ~ For All 'Last Day' Tooltip/Popover Hints that appear through application.
+    //S.Bristol - Changed wording of content for defect 133964
+	$('.hint_lastday').popover({
+		html: true,
+		
+		title:"<strong>Last Day</strong> <a href='#' class='close' data-dismiss='alert'>x</a>",
+
+		content: "Enter the last day you physically worked for this employer.  If you worked for this employer today, enter today's date as your last day worked.",
+
+		container: "body",
+
+		trigger: 'focus hover',
+
+		placement: 'top',
+
+		delay: {
+
+			show: 300,
+
+			hide: 100
+
+		},
+
+		viewport: { 
+
+			selector: 'body', 
+
+			padding: 3
+
+			}
+
+	});
+	
+	//L.Clay ~ For All 'Earliest Approximate Start Date' Tooltip/Popover Hints that appear through application. 
+	$('.hint_earliest_approx_startdate').popover({
+		html: true,
+		
+		title:"<strong>Earliest Approximate Start Date</strong> <a href='#' class='close' data-dismiss='alert'>x</a>",
+
+		content: "The earliest approximate start date is the earliest date that you began working for this employer.  If you started working and stopped working for this employer more than one time in the past two years, enter the earliest date you started working for this employer.",
+
+		container: "body",
+
+		trigger: 'focus hover',
+
+		placement: 'top',
+
+		delay: {
+
+			show: 300,
+
+			hide: 100
+
+		},
+
+		viewport: { 
+
+			selector: 'body', 
+
+			padding: 3
+
+			}
+
+	});
+	
+	//L.Clay ~ For All 'Latest Date of Separation' Tooltip/Popover Hints that appear through application. 
+	$('.hint_latest_date_separation').popover({
+		html: true,
+		
+		title:"<strong>Latest Date of Separation</strong> <a href='#' class='close' data-dismiss='alert'>x</a>",
+
+		content: "A separation date is the date that your employer no longer considers you an employee.  In some cases, this will be the same as the last date you worked.  In other cases, such as a temporary layoff or plant shutdown, your separation may come after the last day you physically worked.  If you started working and stopped working for this employer more than one time in the past two years, enter the latest date you stopped working for this employer.",
+
+		container: "body",
+
+		trigger: 'focus hover',
+
+		placement: 'top',
+
+		delay: {
+
+			show: 300,
+
+			hide: 100
+
+		},
+
+		viewport: { 
+
+			selector: 'body', 
+
+			padding: 3
+
+			}
+
+	});
+	
+	//L.Clay ~ For All 'Rate of Pay' Tooltip/Popover Hints that appear through application. 
+	$('.hint_rate_pay').popover({
+		html: true,
+		
+		title:"<strong>Rate of Pay</strong> <a href='#' class='close' data-dismiss='alert'>x</a>",
+
+		content: "The amount of money your employer pays you per hour, week, etc. Please enter the dollar amount and rate for your rate of pay with this employer. For example, $10 per Hour.",
+
+		container: "body",
+
+		trigger: 'focus hover',
+
+		placement: 'top',
+
+		delay: {
+
+			show: 300,
+
+			hide: 100
+
+		},
+
+		viewport: { 
+
+			selector: 'body', 
+
+			padding: 3
+
+			}
+
+	});
+	
+	//L.Clay ~ For All 'Labor Dispute' Tooltip/Popover Hints that appear through application. 
+	$('.hint_labor_dispute').popover({
+		html: true,
+		
+		title:"<strong>Labor Dispute</strong> <a href='#' class='close' data-dismiss='alert'>x</a>",
+
+		content: "A labor dispute is a controversy between an employer and its employees concerning the terms or conditions of employment, or concerning the association or representation of those who negotiate or seek to negotiate the terms or conditions of employment.",
+
+		container: "body",
+
+		trigger: 'focus hover',
+
+		placement: 'top',
+
+		delay: {
+
+			show: 300,
+
+			hide: 100
+
+		},
+
+		viewport: { 
+
+			selector: 'body', 
+
+			padding: 3
+
+			}
+
+	});
+	
+	//L.Clay ~ For All 'Compensation' Tooltip/Popover Hints that appear through application. 
+	$('.hint_compensation').popover({
+		html: true,
+		
+		title:"<strong>Compensation</strong> <a href='#' class='close' data-dismiss='alert'>x</a>",
+
+		content: "Compensation is something, such as money, given or received as a payment for a service or for a loss.",
+
+		container: "body",
+
+		trigger: 'focus hover',
+
+		placement: 'top',
+
+		delay: {
+
+			show: 300,
+
+			hide: 100
+
+		},
+
+		viewport: { 
+
+			selector: 'body', 
+
+			padding: 3
+
+			}
+
+	});
+	
+	//L.Clay ~ For All 'Gross Pay' Tooltip/Popover Hints that appear through application. 
+	$('.hint_gross_amount').popover({
+		html: true,
+		
+		title:"<strong>Gross Amount</strong> <a href='#' class='close' data-dismiss='alert'>x</a>",
+
+		content: "The gross amount is your hourly rate of pay times the hours you worked.  It is the amount of money on your check stub before any deductions, such as taxes, insurance, retirement contributions, or other deductions.",
+
+		container: "body",
+
+		trigger: 'focus hover',
+
+		placement: 'top',
+
+		delay: {
+
+			show: 300,
+
+			hide: 100
+
+		},
+
+		viewport: { 
+
+			selector: 'body', 
+
+			padding: 3
+
+			}
+
+	});
+	
+	//L.Clay ~ For All 'Floating Holiday' Tooltip/Popover Hints that appear through application. 
+	$('.hint_floating_holiday').popover({
+		html: true,
+		
+		title:"<strong>Floating Holiday Pay</strong> <a href='#' class='close' data-dismiss='alert'>x</a>",
+
+		content: "Floating Holiday Pay is paid holiday time that is not tied to a specific date and which can be taken at the employee&#39;s discretion.",
+
+		container: "body",
+
+		trigger: 'focus hover',
+
+		placement: 'top',
+
+		delay: {
+
+			show: 300,
+
+			hide: 100
+
+		},
+
+		viewport: { 
+
+			selector: 'body', 
+
+			padding: 3
+
+			}
+
+	});
+
+	//L.Clay ~ For All 'Stay on Pay / Retention Pay' Tooltip/Popover Hints that appear through application. 
+	//CShulse separate Stay on Pay and Retention Pay
+	$('.hint_stay_on_pay').popover({
+		html: true,
+		
+		title:"<strong>Stay on Pay</strong> <a href='#' class='close' data-dismiss='alert'>x</a>",
+
+		content: "Stay on Pay is an incentive paid to an employee to retain him or her through a critical business cycle, such as a merger or plant closure.",
+
+		container: "body",
+
+		trigger: 'focus hover',
+
+		placement: 'top',
+
+		delay: {
+
+			show: 300,
+
+			hide: 100
+
+		},
+
+		viewport: { 
+
+			selector: 'body', 
+
+			padding: 3
+
+			}
+
+	});
+	
+	//L.Clay ~ For All 'Stay on Pay / Retention Pay' Tooltip/Popover Hints that appear through application. 
+	//CShulse separate Stay on Pay and Retention Pay
+	$('.hint_retention_pay').popover({
+		html: true,
+		
+		title:"<strong>Retention Pay</strong> <a href='#' class='close' data-dismiss='alert'>x</a>",
+
+		content: "Retention Pay is an incentive paid to an employee to retain him or her through a critical business cycle, such as a merger or plant closure.",
+
+		container: "body",
+
+		trigger: 'focus hover',
+
+		placement: 'top',
+
+		delay: {
+
+			show: 300,
+
+			hide: 100
+
+		},
+
+		viewport: { 
+
+			selector: 'body', 
+
+			padding: 3
+
+			}
+
+	});	
+	
+	//L.Clay ~ For All 'Wages in Lieu of Notice' Tooltip/Popover Hints that appear through application. 
+	$('.hint_wages_lieu_notice').popover({
+		html: true,
+		
+		title:"<strong>Wages in Lieu of Notice</strong> <a href='#' class='close' data-dismiss='alert'>x</a>",
+
+		content: "Wages in Lieu of Notice is a payment or payments made to an employee by an employer for a notice period that the employee has been told he/she does not have to work.",
+
+		container: "body",
+
+		trigger: 'focus hover',
+
+		placement: 'top',
+
+		delay: {
+
+			show: 300,
+
+			hide: 100
+
+		},
+
+		viewport: { 
+
+			selector: 'body', 
+
+			padding: 3
+
+			}
+
+	});
+	
+	//L.Clay ~ For All 'Idle Time Wages / Idle Time Pay' Tooltip/Popover Hints that appear through application. 
+	$('.hint_idle_time_wages').popover({
+		html: true,
+		
+		title:"<strong>Idle Time Wages / Idle Time Pay</strong> <a href='#' class='close' data-dismiss='alert'>x</a>",
+
+		content: "Idle Time Wages are wages paid to an employee for unproductive time caused by lack of orders, machine breakdowns, material shortages, or similar situations.",
+
+		container: "body",
+
+		trigger: 'focus hover',
+
+		placement: 'top',
+
+		delay: {
+
+			show: 300,
+
+			hide: 100
+
+		},
+
+		viewport: { 
+
+			selector: 'body', 
+
+			padding: 3
+
+			}
+
+	});
+	
+	//L.Clay ~ For All 'COBRA' Tooltip/Popover Hints that appear through application. 
+	$('.hint_cobra').popover({
+		html: true,
+		
+		title:"<strong>COBRA</strong> <a href='#' class='close' data-dismiss='alert'>x</a>",
+
+		content: "COBRA is money provided to an employee by an employer as a result of separation of employment to allow the employee to pay for continued coverage in the employer&#39;s group health plan that otherwise would be lost.",
+
+		container: "body",
+
+		trigger: 'focus hover',
+
+		placement: 'top',
+
+		delay: {
+
+			show: 300,
+
+			hide: 100
+
+		},
+
+		viewport: { 
+
+			selector: 'body', 
+
+			padding: 3
+
+			}
+
+	});
+	
+	//S. Bristol ~ For all disabled Back button Tooltip/Popover Hints that appear through application. 
+	$('.hint_disabled_back_btn').popover({
+		html: true,
+		
+		title:"<strong>Caution</strong> <a href='#' class='close' data-dismiss='alert'>x</a>",
+
+		content: "We have disabled this back button.  If there is information on a page prior to this one that you will need to edit you may do so from the module&#39;s summary page.  If there is information in another module you may use the &#34;Progress Bar&#34; above to select any previously completed module or you may navigate back from the final summary.<BR><BR>Remember: DO NOT use the browser&#39;s navigation buttons.",
+
+		container: "body",
+
+		trigger: 'focus hover',
+
+		placement: 'top',
+
+		delay: {
+
+			show: 300,
+
+			hide: 100
+
+		},
+
+		viewport: { 
+
+			selector: 'body', 
+
+			padding: 3
+
+			}
+
+	});
+
+	//L.Clay ~ For the 'x' that appears in the tooltip/popover title box toward the top. 10/18/2016
+	$(document).on("click", ".popover .close" , function(){
+	        $(this).parents(".popover").popover('hide');
+	    	});
+	
+	//S. Bristol ~ For early start date tooltip/popover hint where date is to be shown.  
+	$('.hint_earliest_startdate_with_actual_date').popover({
+		html: true,
+		
+		title:"<strong>Earliest Approximate Start Date</strong>  <a href='#' class='close' data-dismiss='alert'>x</a>",
+
+		content:  $('#earliestStartDateHints').html(),
+        
+		container: "body",
+
+		trigger: 'focus hover',
+
+		placement: 'top',
+
+		delay: {
+
+			show: 300,
+
+			hide: 100
+
+		},
+
+		viewport: { 
+
+			selector: 'body', 
+
+			padding: 3
+
+			}
+
+	});	
+
+	//S. Bristol ~ For last day of work  tooltip/popover hint where dates are to be shown.  
+	$('.hint_lastday_work_with_dates').popover({
+		html: true,
+		
+		title:"<strong>Last Day</strong> <a href='#' class='close' data-dismiss='alert'>x</a>",
+
+		content:  $('#lastWorkDayHints').html(),
+        
+		container: "body",
+
+		trigger: 'focus hover',
+
+		placement: 'top',
+
+		delay: {
+
+			show: 300,
+
+			hide: 100
+
+		},
+
+		viewport: { 
+
+			selector: 'body', 
+
+			padding: 3
+
+			}
+
+	});
+
+	//S. Bristol ~ For latest separation date  tooltip/popover hint where dates are to be shown.  
+	$('.hint_lastest_separation_date_with_actual_date').popover({
+		html: true,
+		
+		title:"<strong>Latest Date of Separation</strong> <a href='#' class='close' data-dismiss='alert'>x</a>",
+
+		content:  $('#latestSeparationDateHints').html(),
+        
+		container: "body",
+
+		trigger: 'focus hover',
+
+		placement: 'top',
+
+		delay: {
+
+			show: 300,
+
+			hide: 100
+
+		},
+
+		viewport: { 
+
+			selector: 'body', 
+
+			padding: 3
+
+			}
+
+	});
+	//SB ~ For Monetary oos  tooltip/popover hint where dates are to be shown.  
+	$('.hint_mon_oos').popover({
+		html: true,
+		title:"<strong>open claim</strong> <a href='#' class='close' data-dismiss='alert'>x</a>",
+		content: "An open claim is a claim on which the expiration date has not been reached and there is a remaining balance greater than $0.",
+		container: "body",
+		trigger: 'focus hover',
+		placement: 'bottom',
+		delay: {show: 300, hide: 100},
+		viewport: { selector: 'body', padding: 3	}
+	});
+	
+	// zz add for PROD00136564: show tooltip for VALID Indiana ID or Driver's license  
+	$('.hint_driver_license_valid').popover({
+		html: true,
+		
+		title:"<strong>Is my Driver's License or ID Card valid?</strong> <a href='#' class='close' data-dismiss='alert'>x</a>",
+		
+		content: "<p>ID Cards issued by the Indiana BMV are valid.</p><p>Your Indiana Driver's License is VALID even if it is expired or conditional.</p><p>Your Driver's License may be invalid if </p><ul><li>the BMV has suspended your Driver's License;</li><li>your Driver's License is under a probationary period; or</li><li>your Driver's License has to be reinstated.</li></ul><p>Need your license status? <a class='text' href='https://secure.in.gov/BMV/mybmv/Default.aspx' target='_blank' title='Bmv Info'>Click here to access myBMV.</a></p>",	
+
+		container: "body",
+
+		trigger: 'focus hover',
+
+		placement: 'top',
+
+		delay: {
+			show: 350,
+			hide: 100
+		},
+
+		viewport: { 
+			selector: 'body', 
+
+			padding: 3
+		}
+	});
+});
+	
+	
+

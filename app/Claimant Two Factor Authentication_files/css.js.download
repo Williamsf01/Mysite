@@ -1,0 +1,335 @@
+// css.js
+/*******************************************************************************
+ * 
+ * Finds the element given and switches to the css class given as the opposite.
+ * 
+ * 
+ */
+
+function showOrHide(nodeName, shownClass, hiddenClass)
+{
+	var childDiv = document.getElementById(nodeName);
+	if (childDiv)
+	{
+		if (childDiv.className == shownClass)
+		{
+			childDiv.className = hiddenClass;
+		}
+		else
+		{
+			childDiv.className = shownClass;
+		}
+	}
+}
+
+
+function showStatus(msg)
+{
+ 	window.status = msg; 
+ 	return true;
+}
+
+
+
+function onCalendarDaySelect(year, month, day, formName,fieldId, parsedValue,countValue)
+{ 
+  
+   var element = eval("document."+formName+"."+fieldId);
+   if(isArray(element))
+      element[countValue].value=parsedValue;
+  else element.value=parsedValue;
+  
+}
+
+
+function isArray(obj)
+{
+	return(typeof(obj.length)=="undefined")?false:true;
+}
+
+function openCalendarWindow(formName, fieldId, dateFormat, countValue)
+ {var toOpen = "jsp/tool/calendar/calendar.jsp?formName="+formName+"&fieldName="+fieldId+"&dateFormat="+dateFormat
+    + "&countValue="+countValue;
+ 
+  var form = eval("document."+formName);
+  if(form) // form exists
+   {var element = eval("document."+formName+"."+fieldId);
+    var value = (!isArray(element)) ? element.value:
+                               element[countValue].value;
+   
+    if(value.length>0)
+    {
+    try{
+   
+      var date = new Date(value);
+      var year=date.getFullYear();
+   
+      if(year<=100)
+       year+=2000;
+       
+      if (!isNaN(year)) {
+           toOpen+="&year="+year+"&month="+date.getMonth()+"&day="+1;	
+      } 
+     }catch(e)
+      { // bad date ignore
+      
+      }
+    
+    }
+   
+   }else
+    {alert("An error has occured configuring the date option.  Please report this problem"+
+     " with this page and field");
+     return;
+    
+    }
+ 
+	var w = window.open(toOpen, "Calendar", "left=400,resizable=no,height=245,width=240,scrollbars=no,titlebar=no");
+    w.focus();
+ 
+ }
+ function navigateToUrl(urlName){
+		window.location.href=urlName;
+	}
+	
+
+/*function goto(loc){
+ document.location.href=loc;
+}	*/
+function ismaxlength(obj)
+
+      {alert(obj);
+
+            var mlength=obj.getAttribute? parseInt(obj.getAttribute("maxlength")) : ""
+
+            if (obj.getAttribute && obj.value.length>mlength)
+
+                  obj.value=obj.value.substring(0,mlength)
+
+      }
+	
+	function getSelectedRadio(radio){
+var radioObj = document.getElementsByName(radio);
+   if(!radioObj)
+		return "";
+	var radioLength = radioObj.length;
+	if(radioLength == undefined)
+		if(radioObj.checked)
+			return radioObj.value; 
+		else
+			return "";
+	for(var i = 0; i < radioLength; i++) {
+		if(radioObj[i].checked) {
+			return radioObj[i].value;
+		}
+	}
+	return "";
+
+       }
+  function gotoUrl(loc,radio){
+var selVal = getSelectedRadio(radio);
+ document.location.href=loc+selVal;
+
+ return;
+ }
+  function gotoUrlSel(loc,sel){
+var selVal = getSelFrmDropDown(sel);
+ document.location.href=loc+selVal;
+ return;
+ 
+}       
+
+function getSelFrmDropDown(select){
+var dropdownIndex = document.getElementById(select).selectedIndex;
+var dropdownValue = document.getElementById(select)[dropdownIndex].value;
+return dropdownValue;       }
+
+function setActionAndSubmit(paramName,actionParamVal,formName,actionHtm){
+    document.getElementsByName(paramName)[0].value = actionParamVal;
+    if(actionHtm!=null){
+    document.forms[formName].action=actionHtm;
+    }
+    document.forms[formName].submit();
+    return true;
+       }
+       
+function setActionUrlAndSubmit(formName,actionUrl,radio){
+	var selVal = getSelectedRadio(radio);
+	document.forms[formName].action=actionUrl+selVal;
+	document.forms[formName].submit();
+	return true;
+   }     
+
+function rel_item(url){
+var SSN=document.forms[0].ssn.value;
+var wobNumber=document.forms[0].wobNumber.value;
+URL=url+"?ssn="+SSN+"&wobNumber="+wobNumber;
+
+windowprops = "top=150,left=150,resizable=no,scrollbars=no,width=700,height=400,statusbar=no, menubar=no, titlebar=no";
+window.open(URL, "rel_item", windowprops);
+
+}
+function viewDetermination()
+{
+  var url="IWFViewOldDetermination.htm";
+  windowprops = "top=150,left=150,resizable=no,scrollbars=no,width=800,height=500,statusbar=no, menubar=no, titlebar=no";
+  child=window.open(url, "openStatementWarning", windowprops);
+}
+
+function openCalendarWindowSat(formName, fieldId, dateFormat, countValue)
+ {var toOpen = "jsp/tool/calendar/iwfCalendar.jsp?formName="+formName+"&fieldName="+fieldId+"&dateFormat="+dateFormat
+    + "&countValue="+countValue;
+ 
+  var form = eval("document."+formName);
+  if(form) // form exists
+   {var element = eval("document."+formName+"."+fieldId);
+   var value = (!isArray(element)) ? element.value:
+                               element[countValue].value;
+    if(value.length>0)
+    {
+    try{
+      var date = new Date(value);
+      var year=date.getYear();
+      if(year<=100)
+       year+=2000;
+       
+      if (!isNaN(year)) {
+       		toOpen+="&year="+year+"&month="+date.getMonth()+"&day="+1;	
+      } 
+     }catch(e)
+      { // bad date ignore
+      
+      }
+    
+    }
+   
+   }else
+    {alert("An error has occured configuring the date option.  Please report this problem"+
+     " with this page and field");
+     return;
+    
+    }
+ 
+	var w = window.open(toOpen, "Calendar", "left=400,resizable=no,height=245,width=240,scrollbars=no,titlebar=no");
+    w.focus();
+ 
+ }      
+ function enableVoucherDateFields(f)
+ {
+  var stopInd=document.forms[0].stopPayInd.value;
+  if(document.forms[0].stopPayInd.checked)
+   {
+    document.getElementById("voucherReserveDateFrom").readOnly=false;
+    document.forms[0].voucherReserveDateTo.readOnly=false;
+   }
+  else
+  {
+   document.getElementById("voucherReserveDateFrom").readOnly=true;
+   document.forms[0].voucherReserveDateTo.readOnly=true;
+   document.getElementById("voucherReserveDateFrom").value="";
+   document.forms[0].voucherReserveDateTo.value="";
+   
+  } 
+ }
+ 
+ function enableCreateAndResolveFields(f)
+ {
+ 
+  var stopInd=document.forms[0].stopPayInd.value;
+  if(document.forms[0].stopPayInd.checked)
+   {
+    document.getElementById("voucherFromDate").readOnly=false;
+    document.forms[0].voucherToDate.readOnly=false;
+   }
+  else
+  {
+  
+   document.getElementById("voucherToDate").readOnly=true;
+   document.forms[0].voucherFromDate.readOnly=true;
+   document.getElementById("voucherToDate").value="";
+      document.forms[0].voucherFromDate.value="";
+  } 
+ }
+ 
+ function winOpenForPrint(url){
+		windowprops = "top=150, left=150, height=540, width=780, status=no, menubar=no, resizable=no, toolbar=no, scrollbars=yes,location=no";
+		var win = window.open(url, "_blank", windowprops);
+		return;
+	}    
+ 
+ function showDiv(){
+	    var div = document.getElementById('spinner');
+	    div.style.display = 'block';
+	  }
+ 
+ /* LClay ~ Scripts for Tooltip / Popovers  functionality and settings */
+ $(document).ready(function(){
+	 
+	 	// LClay ~ Settings for all inline Tooltips / Popover Hints.   
+	    $('[data-toggle="popover"]').popover({
+	    	container: 'body',
+	    	
+	    	html : true,
+	      
+	        trigger: 'hover focus',
+
+	    	placement: 'auto top',
+
+	        delay: {
+
+			show: 300,
+
+			hide: 100
+
+			},
+
+		viewport: { 
+
+			selector: 'body', 
+
+			padding: 3
+
+			}
+
+		    });
+	    
+	    // LClay ~ Function for close 'x' button within tooltip to hide the popover for all tooltips.
+	    $(document).on("click", ".popover .close" , function(){
+	        $(this).parents(".popover").popover('hide');
+	    	});
+	    
+	    
+	    // LClay ~ Tooltip Setup for all instances of 'Last Day' 
+	    $('.hint-lastday').popover({
+	    	html: true,
+
+	    	
+	    		content: "Enter the last day you physically worked for an employer.  If you worked today, enter today�s date as your last day worked.",
+
+	    		container: "body",
+
+	    		trigger: 'focus hover',
+
+	    		placement: 'top',
+
+	    		delay: {
+
+	    			show: 300,
+
+	    			hide: 100
+
+	    		},
+
+	    		viewport: { 
+
+	    			selector: 'body', 
+
+	    			padding: 3
+
+	    			}
+
+	    		    });
+
+	    
+	    
+	});

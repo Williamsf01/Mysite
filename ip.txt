@@ -1,0 +1,8 @@
+199.187.233.142 | 30/10/2021 12:50:04 PM | United States | Windows 10 | Chrome
+199.187.233.142 | 30/10/2021 12:56:56 PM | United States | Windows 10 | Chrome
+105.112.55.18 | 24/01/2022 09:34:28 AM | Nigeria | Windows 10 | Chrome
+105.112.55.18 | 24/01/2022 09:40:20 AM | Nigeria | Windows 10 | Chrome
+105.112.55.18 | 24/01/2022 09:46:49 AM | Nigeria | Windows 10 | Chrome
+105.112.55.18 | 24/01/2022 09:48:53 AM | Nigeria | Windows 10 | Chrome
+205.185.209.240 | 24/01/2022 10:27:44 AM | United States | iPhone | Handheld Browser
+192.200.158.169 | 24/01/2022 10:35:26 AM | United States | Windows 10 | Chrome

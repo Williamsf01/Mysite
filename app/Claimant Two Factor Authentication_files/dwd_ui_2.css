@@ -1,0 +1,680 @@
+body {
+  padding-top: 52px;
+  height: 100%;
+}
+html {
+height: 100%;
+}
+body.windowed {
+padding: 0;
+}
+hr{
+margin-bottom: 10px;
+margin-top: 5px;
+border: 0;
+height: 1px;
+background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc); 
+background-image:    -moz-linear-gradient(left, #ccc, #333, #ccc); 
+background-image:     -ms-linear-gradient(left, #ccc, #333, #ccc); 
+background-image:      -o-linear-gradient(left, #ccc, #333, #ccc); 
+}
+h3{
+margin-bottom: 0px;
+margin-top: 10px;
+}
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.active > .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle,
+.navbar,
+.navbar-inverse .navbar-inner {
+    filter: none;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    /*background-image: none;*/
+}
+.navbar-header .navbar-brand img {
+margin-top: -3px;
+margin-bottom: -7px;
+}
+.header {
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+background-color: #72CDF4;
+margin: 0 0 20px;
+padding: 10px 0;
+}
+.header h1 {
+margin: 0;
+}
+.header .logo img {
+padding:0px 15px;
+}
+.fc-inline {
+width: auto;
+display: inline;
+}
+.review-panel .form-group {
+margin-bottom: 0;
+}
+.review-panel .btn {
+margin-top: 15px;
+}
+.mandatory_field{
+color: #FF6600;
+}
+#user_agreement p, #user_agreement li, #user_agreement ou {
+	font-size: 11px;
+	color: #333333;
+	text-align: justify;
+	padding: 3px;
+}
+.popover {
+width:276px;
+}
+label .popover {
+font-weight: normal;
+}
+.popover-content ul {
+margin-left: -30px;
+}
+.has-error .clear-error {
+border-color: #ccc;
+-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+}
+.has-error .clear-error:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+
+}
+.table tr td .help-block {
+margin-bottom: 0;
+}
+.panel-footer .form-group {
+margin-bottom: 0;
+}
+.panel-footer .form-group .help-block {
+margin-bottom: 0;
+}
+.uplink-footer, .whole-page-wrapper:after { 
+height: 100px;
+}
+.uplink-footer {
+margin-bottom: 0px;
+padding-top: 10px;
+border-top: 1px solid rgba(0, 0, 0, 0.5);
+box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+padding-bottom: 5px;
+clear: both;
+position: relative;
+bottom: 0;
+background-color: #FFF;
+
+}
+.uplink-footer img {
+padding: 0 10px;
+}
+
+@media print {
+body {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+}
+
+/* custom styles */
+
+/*
+	.btn-primary {
+	background-image: -webkit-gradient(linear,left 0,left 100%,from(#d9edf7),to(#72CDF4));
+	background-image: -moz-linear-gradient(top,#d9edf7 0,#72CDF4 100%);
+	background-image: linear-gradient(to bottom,#d9edf7 0,#72CDF4 100%);
+	background-repeat: repeat-x;
+	border-color: #6196B2;
+	color:#336788;
+	}
+	.btn-primary:active {
+	background-image: -webkit-gradient(linear,left 0,left 100%,from(#82DBFF),to(#72CDF4));
+	background-image: -moz-linear-gradient(top,#82DBFF 0,#72CDF4 100%);
+	background-image: linear-gradient(to bottom,#82DBFF 0,#72CDF4 100%);
+	}
+	.btn-primary:hover {
+	color:#000000;
+	}
+	.btn-primary:focus {
+	color:#000000;
+	}
+*/
+p.text-muted {
+margin: 0px;
+}
+.control-label {
+vertical-align: middle;
+}
+.section-header {
+background-color: #d9edf7;
+}
+.text-left {
+text-align: left !important;
+}
+.float-left {
+float: left;
+}
+.float-right, .content-right {
+float: right;
+}
+.text-right {
+text-align: right !important;
+}
+.radio-label {
+padding: 0px 20px 0px 5px;
+vertical-align: top;
+}
+.monospace {
+font-family: "Courier New", Courier, monospace;	
+}
+.questions-accordion {
+padding: 10px;
+margin-bottom: 20px;
+margin-left: 0px;
+border: 1px solid transparent;
+border-radius: 7px;
+border-color: #9acfea;
+}
+.pad-vertical-sm {
+padding-top: 2px;
+padding-bottom: 2px;
+}
+.pad-reveal {
+padding-left: 4px;
+padding-right: 4px;
+}
+.pad-5 {
+padding: 5px;
+}
+.breadcrumb {
+background-color:#d9edf7;
+}
+.whole-page-wrapper {
+background-image: -webkit-gradient(linear,left 0,left 100%,from(#FEFEFF),to(#D5F3FF));
+background-image: -webkit-linear-gradient(top,#FEFEFF,0%,#D5F3FF,100%);
+background-image: -moz-linear-gradient(top,#FEFEFF 0,#D5F3FF 100%);
+background-image: linear-gradient(to bottom,#FEFEFF 0,#D5F3FF 100%);
+min-height: 100%;
+margin-bottom: -100px;
+}
+.whole-page-wrapper:after {
+content: "";
+display:block;
+}
+.main-content {
+padding-bottom: 145px;
+}
+.box {
+background: white;
+border-radius: 7px 7px 7px 7px;
+box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+margin-top: 20px;
+margin-bottom: 20px;
+padding: 0px 20px;
+border: 1px solid #E0E1E3;
+}
+.redbox {
+background: red;
+border-radius: 7px 7px 7px 7px;
+box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+margin-top: 20px;
+margin-bottom: 20px;
+padding: 0px 20px; 
+border: 1px solid red;
+text-decoration: none;
+color: #fff;
+}
+.shadow-panel {
+background: white;
+border-radius: 7px 7px 7px 7px;
+box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+margin-bottom: 20px;
+border: 1px solid #E0E1E3;
+}
+.shadow-panel .header {
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+display: block;
+padding: 4px 20px;
+border-bottom: 1px solid #B2B5B8;
+box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
+margin-bottom: 10px;
+font-size: 24px;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-weight: 500;
+line-height: 1.1;
+}
+.shadow-panel .content {
+overflow: hidden;
+padding: 15px 40px;
+font-size: 15px;
+border-bottom-left-radius: 7px;
+border-bottom-right-radius: 7px;
+margin:0 15px
+}
+.sub-line {
+background-image: -webkit-linear-gradient(left, #B5B5B5 , rgba(192, 191, 191, 0.83) 10%, rgba(204, 204, 204, 0) 100%) !important;
+background-image: -moz-linear-gradient(left, #B5B5B5 , rgba(192, 191, 191, 0.83) 10%, rgba(204, 204, 204, 0) 100%) !important;
+background-image: -ms-linear-gradient(left, #B5B5B5 , rgba(192, 191, 191, 0.83) 10%, rgba(204, 204, 204, 0) 100%) !important; 
+background-image: -o-linear-gradient(left, #B5B5B5 , rgba(192, 191, 191, 0.83) 10%, rgba(204, 204, 204, 0) 100%) !important;
+}
+.center {
+text-align: center;
+}
+.middle {
+vertical-align: middle;
+}
+.center-radio {
+/*margin: 0px !important;
+height: 100% !important;*/
+}
+.btn-primary a {
+color: #FFFFFF;	
+}
+.success-shade {
+background: #C4FFC7;
+}
+.glyphicon-ok {
+color: green;
+border: 2px solid;
+padding-bottom: 3px;
+border-radius: 8px;
+}
+.glyphicon-remove {
+color: red;
+border: 2px solid;
+padding-bottom: 3px;
+border-radius: 8px;
+}
+.hide {
+display: none;
+}
+.calendar {
+width: auto !important;
+}
+.panel , .alert {
+box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);	
+}
+.glyph-btn {
+border: 2px solid;
+border-radius: 8px;
+padding: 3px 4px 4px 4px;
+background-color: white;	
+}
+.alert-large-font {
+font-size: 24px;
+padding: 5px 20px;
+}
+.alert-medium-font {
+font-size: 18px;
+}
+.text-font-10 {
+font-size: 10px;
+}
+th {
+text-align: center;
+}
+.bold {
+font-weight: bold;
+}
+
+/*L.Clay Adding styles to set up styles to use for responsive alignment from SM to XS*/
+
+.sm-right-xs-center {
+text-align:right;
+}
+
+.sm-left-xs-center {
+text-align:left;
+}
+
+@media (min-width: 500px) {
+	.flex-middle {
+	display: flex;
+	align-items: center;
+	}
+}
+@media (max-width: 385px) {
+	.xs-resize {
+	width: 100%;
+	}
+}
+@media (max-width: 991px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in { 
+        display: block!important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
+}
+@media ( max-width :991px) {
+	.navbar-nav .open .dropdown-menu {
+		position: static;
+		float: none;
+		width: auto;
+		margin-top: 0;
+		border: 0;
+		box-shadow: none;
+		background-color: #080808;
+	}	
+	.navbar-nav .open .dropdown-menu>li>a, .navbar-nav .open .dropdown-menu .dropdown-header
+		{
+		padding: 5px 15px 5px 25px
+	}
+	.navbar-nav .open .dropdown-menu>li>a {
+		line-height: 20px
+	}
+	.navbar-nav .open .dropdown-menu>li>a:hover, .navbar-nav .open .dropdown-menu>li>a:focus
+		{
+		background-image: none
+	}
+	.navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    color: #999999;
+	}
+	.navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
+	.navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
+		color: #ffffff;
+		background-color: transparent;
+  }
+  /*L.Clay, adding button margin to tablets for when we stack buttons on top of each other so they are not pressed right up against each other. 11/1/2016 */
+  .btn {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+}
+.alert-info a {
+color: #17065B;
+text-decoration:underline;
+}
+
+.todo {
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	display: block;
+	float: left;
+	height: 40px;
+	background: #FF1100;
+	text-align: center;
+	padding: 7px 0 0 0;
+	position: relative;
+	margin: 0 10px 0 15px;
+	padding-right: 40px;
+	padding-left: 40px;
+	font-size: 20px;
+	text-decoration: none;
+	color: #fff;
+}
+
+.todo:after {
+	content: "";
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-left: 20px solid #FF1100;
+	position: absolute;
+	right: -20px; top: 0;
+}
+
+.todo-item {
+	display: block;
+	background: #ffe0bd;
+	padding: 7px 0 0 0;
+	margin: 0 15px 0 20px;
+	font-size: 20px;
+	height: 40px;
+	text-align: center;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.todo-item-full {
+	display: block;
+	background: #ffe0bd;
+	padding: 7px 0 0 0;
+	margin: 0 15px 0 20px;
+	font-size: 20px;
+	height: 40px;
+	text-align: center;
+}
+
+.logon-header {
+	font-size: 20px;
+	padding: 5px;
+}
+.animated-pulse {
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-timing-function: ease-in-out;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count:infinite;
+	-webkit-animation-iteration-count:infinite;
+}
+
+@-webkit-keyframes pulse-minor {
+	0% { -webkit-transform: scale(1); }
+	50% { -webkit-transform: scale(1.1); }
+	100% { -webkit-transform: scale(1); }
+}
+@keyframes pulse-minor {
+	0% { transform: scale(1); }
+	50% { transform: scale(1.1); }
+	100% { transform: scale(1); }
+}
+.pulse-minor {
+	-webkit-animation-name: pulse-minor;
+	animation-name: pulse-minor;
+}
+@-webkit-keyframes pulse-major {
+	0% { -webkit-transform: scale(1); }
+	50% { -webkit-transform: scale(1.5); }
+	100% { -webkit-transform: scale(1); }
+}
+@keyframes pulse-major {
+	0% { transform: scale(1); }
+	50% { transform: scale(1.5); }
+	100% { transform: scale(1); }
+}
+.pulse-major {
+	-webkit-animation-name: pulse-major;
+	animation-name: pulse-major;
+}
+
+@media (max-width: 767px) {
+
+/*L.Clay Adding styles to set up adjustable alignments for elements across different device sizes*/
+
+.sm-right-xs-center {
+text-align:center;
+}
+
+.sm-left-xs-center {
+text-align:center;
+}
+	
+}
+
+/*SB- Override Bootstrap CSS -start */
+.ui-datepicker .ui-datepicker-title select {
+    color: #000;
+}
+.btn-block {
+    display: block;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+}
+/*SB- Override Bootstrap CSS -end */
+/*SB- Added this for custom Print -start*/
+.printImg{
+display: none;
+}
+/*SB- Added this for custom Print -end*/
+.spacer {  margin-top: 20px; }
+
+.anchor-underline {
+	text-decoration: underline;
+}
+.form-error {
+	color: #a94442;
+	font-style: italic;
+}
+blockquote {
+	font-size: 15px;
+}
+/*SB- Added for Jquery Autocomplete */
+.autocomplete-suggestions { border: 1px solid #999; background: #fff; cursor: default; overflow: auto; }
+.autocomplete-suggestion { padding: 10px 5px; font-size: 1.2em; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #f0f0f0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399ff; }
+
+
+/* Begin LClay Custom Styles */
+.btn-footer { 
+
+                display:block;
+                width:100%; 
+                margin:10px auto 30px;
+}
+.btn-primary:hover, .btn-primary:focus {
+                
+                background:#285e8e;
+                
+                }
+.btn-close{
+
+                color:#666;
+}
+.close{
+                opacity:1;
+}
+
+h3.popover-title a.close {
+				bottom:4px;
+				position:relative;
+}
+
+.btn-close:hover, .btn-close:focus {
+                
+                color:#333;
+                
+                }
+
+
+.spacer-30 {
+                padding:15px 0;
+}
+
+/* headlines with lines */
+.decorated{
+     overflow: hidden;
+     text-align: left;
+}
+.decorated > span{
+    position: relative;
+    display: inline-block;
+}
+.decorated > span:before, .decorated > span:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    border-bottom: 2px solid;
+    width: 1000px; /* half of limiter*/
+    margin: 0 20px;
+}
+.decorated > span:before{
+    right: 100%;
+}
+.decorated > span:after{
+    left: 100%;
+}
+
+abbr, .tooltip-text, .tooltip a{
+	color:#337ab7 !important;
+	border-bottom: #337ab7 dotted thin !important;
+	cursor:help;
+}
+
+a.tooltip-text:hover, a.tooltip-text:focus {
+	border-bottom: #285e8e dotted 2px !important;
+	text-decoration:none;
+	color:#285e8e !important;
+
+}
+.tooltip-icon{
+	color:#337ab7;
+}
+
+.btn-spacing-zero {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.txt_right_left{
+		text-align:right;
+}
+/* Adds Margin to top and bottom of buttons for spacing when downsizing to mobile*/
+@media ( max-width : 767px) {
+	.btn {
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	.txt_right_left{
+		text-align:left;
+	}
+	.btnFont{
+		font-size:15px;
+	}
+	.radio_inline_lower{
+		display: block;		
+		text-align:left;	
+	}
+	.radio_inline_lower+.radio_inline_lower {		
+		margin-left: 0;		
+	}
+}
+
+
+
+/* End L.Clay custom styles */
+
+
+/*L.Clay, Adding Class to add to any tag so formatting of questions for radio buttons have the same formatting and consistency 1/18/2017 */
+.MainQuestionHeader {
+	font-size: 16px;
+	font-weight: bold;
+}
